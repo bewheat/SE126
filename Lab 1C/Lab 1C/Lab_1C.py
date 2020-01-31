@@ -9,7 +9,7 @@
 
 
 #Variable Dictionary:
-#   again: control variable for while loop. Asks user if they would like to enter additional rooms
+#   answer: control variable for while loop. Asks user if they would like to enter additional rooms
 #   cap: Room capacity
 #   attending: Amount of people attending meeting
 #   rem_space: Amount of space remaining.
@@ -18,61 +18,23 @@
 #            [attending - cap]
 
 
-
-
-
-#FUNCTIONS:
-
-#ask for capacity and return value
-def capacity():
-    maxcap = int(input("What is the rooms capacity? "))
-    return maxcap
-#END capacity
-
-#ask for number of people attending and return value
-def attendees():
-    att = int(input("How many people will be attending? "))
-    return att
-#END attendees
-
-#return the difference between room capacity and attendees
-def register(x,y):
-    difference = x - y
-    return difference
-#END register
-
-#ask user if they want to check anymore rooms
-def check():
-    answer = input("Would you like to check another room? [y/n]: ")
-    answer = answer.lower()
-
-    #put in while loop to ensure user answers with either "y", "Y", "n", or "N"
-    while answer != "y" and answer != "n":
-        answer = input("Would you like to check another room? [y/n]: ")
-        answer = answer.lower()
-    return answer
-    #end while loop
-#END check
-
-
-
-
-#PROGRAM START:
+#Program Start:
 
 #Control variable for while loop
-again = "y"
+answer = "y"
 
 
 #use while loop to allow user to enter as many rooms as they'd like to
-while again == "y":
+while answer == "y" or answer == "Y":
     #Ask user for room capacity and number of attendees
-    cap = capacity()
-    attending = attendees()
+    cap = int(input("What is the rooms capacity? "))
+
+    attending = int(input("How many people will be attending? "))
 
     #use if statement to determine if more people can attend
     if attending < cap:
         #subtract attending from cap to determine remaining space
-        rem_space = register(cap, attending)
+        rem_space = cap - attending
 
         print("You can allow {0} additional people to attend without violating fire regulations.".format(rem_space))
         print()
@@ -89,7 +51,7 @@ while again == "y":
     #use else statement to determine if room is over capacity
     else:
         #subtract cap from attending to determine how many people need to be excluded
-        overcap = register(attending, cap)
+        overcap = attending - cap
 
         print("You are over capacity. You will have to exclude {0} people to meet fire regulations".format(overcap))
         print()
@@ -97,7 +59,12 @@ while again == "y":
     #end else statement
 
     #Ask if user would like to enter another room
-    again = check()
+    answer = input("Would you like to check another room? [y/n]: ")
+
+    #put in while loop to ensure user answers with either "y", "Y", "n", or "N"
+    while answer != "y" and answer != "Y" and answer != "N" and answer != "n":
+        answer = input("Would you like to check another room? [y/n]: ")
+    #end inner while loop
 
 #end while loop
 
