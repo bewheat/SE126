@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "bubble sort demo", "bubble sort demo\bubble sort demo.pyproj", "{6C35B76D-8B48-43AC-89EE-24A42EC5616B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C35B76D-8B48-43AC-89EE-24A42EC5616B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C35B76D-8B48-43AC-89EE-24A42EC5616B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A8F65F7-1D86-4A52-A404-FD8E12C5A83B}
+	EndGlobalSection
+EndGlobal
